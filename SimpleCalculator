@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class SimpleCalculator{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        boolean KeepRunning = true;
+        
+        while(KeepRunning){
+             // This code reads the user input
+            System.out.print("Enter the first number: ");
+            double num1 = scanner.nextDouble();
+            
+            System.out.print("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+            
+            System.out.print("Enter an operation (+, -, *, /, %): ");
+            char operation = scanner.next().charAt(0);
+            
+            double result = 0;
+            boolean valid = true;
+            //Perform operation
+            switch(operation){
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if(num2==0){
+                        System.out.println("Error cannot divide by zero.0️⃣");
+                        valid = false;
+                    }else{
+                        result = num1 / num2;
+                    }
+                    break;
+                case '%':
+                    result = num1 % num2;
+                    break;
+                default:
+                System.out.println("No valid operation chosen.");
+            }
+            if(valid) {
+                System.out.println("Result: " + result);
+            }
+            System.out.println("Do you want to try again? (yes/no: ");
+            String answer = scanner.next();
+            
+            if(!answer.equalsIgnoreCase("yes")){
+                    KeepRunning = false;
+            }
+        }
+        System.out.println("End of operation.");
+        scanner.close();
+    }
+}

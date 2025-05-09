@@ -52,6 +52,16 @@ class Main {
                 
         }
         }while(choice !=3);
+        int countDown=20;
+         while(countDown >=1 ){
+              
+             if(countDown % 4==0){
+                  countDown--;
+                  continue;
+             }
+            System.out.println("Number from 20 to 1: " + countDown);
+             countDown--;
+         }
         scanner.close();
     }
 }

@@ -1,0 +1,20 @@
+class Main {
+    public static void main(String[] args) {
+      
+        String[] names =  {"Joy", "Jane", "Alice", "John Doe", "Johnny", "Matthew", "Solomon"};
+        for(String name : names){
+            System.out.println(name);
+        }
+       int countStartsWithJ = 0;
+       
+       for(String name : names){
+           if(name.startsWith("J")){
+               countStartsWithJ++;
+           }
+           if(name.startsWith("J")){
+              System.out.println("Names which start with letter J: " + name);
+           }
+       }
+        System.out.println("Number of names starting with 'J': " + countStartsWithJ);
+    }
+}

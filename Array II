@@ -6,6 +6,7 @@ class Main {
             System.out.println(name);
         }
        int countStartsWithJ = 0;
+       String longest = names[0];
        
        for(String name : names){
            if(name.startsWith("J")){
@@ -14,7 +15,13 @@ class Main {
            if(name.startsWith("J")){
               System.out.println("Names which start with letter J: " + name);
            }
+           if(name.length() > longest.length()){
+               longest = name;
+           }
+
        }
         System.out.println("Number of names starting with 'J': " + countStartsWithJ);
+        
+         System.out.println("Longest name: " + longest);
     }
 }

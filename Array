@@ -35,7 +35,28 @@ class Main {
        System.out.println("Maximum " + max);
        System.out.println("Minimum " + min);
        System.out.println("Average: " + average);
-      
+
+
+ int[] scores = {75, 88, 66, 92, 70, 58, 63};
+      int total = 0;
+     int max = scores[0];
+     int aboveAverage = 0;
+       for(int score : scores){
+          total += score;
+          if(score > max) max = score;
+            
+       }
+         double Average = (double)total/scores.length;
+       for(int score : scores){
+            if(score > Average){
+                 aboveAverage++;
+             }
+       }
+          System.out.println("Total Score: " + total);
+        
+          System.out.println("Average score: " + Average);
+          System.out.println("Highest score: " + max);
+          System.out.println("Number of students above average: " + aboveAverage);
     }
 }
 

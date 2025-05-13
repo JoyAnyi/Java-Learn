@@ -19,5 +19,24 @@ class Main {
                 }
             }
         }
+      
+       int[] value = {90,100,101,102,10,20,30,40,50,60,70,80};
+
+       int Sum = 0, max = value[0], min = value[0];
+       for(int val : value){
+           Sum += val;
+           if(val > max  ) max = val;
+           if(val < min) min = val;
+            System.out.println("Value " + val);
+       }
+      
+       double average = (double)Sum/value.length;
+       System.out.println("Sum: " + Sum);
+       System.out.println("Maximum " + max);
+       System.out.println("Minimum " + min);
+       System.out.println("Average: " + average);
+      
     }
 }
+
+

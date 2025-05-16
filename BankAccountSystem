@@ -1,0 +1,47 @@
+class BankAccount{
+    private String accountName;
+    private int accountNumber;
+    private double balance;
+    static String bankName = "JoyBank";
+    
+    public BankAccount(String accountName, int accountNumber, double initial_Deposit){
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
+        this.balance = initial_Deposit;
+    }
+    
+    public double getBalance(){
+        return balance;
+    }
+    public void deposit(double amount){
+        if(amount > 0){
+            balance += amount;
+        }
+    }
+    public void withdraw(double amount){
+        if(amount > 0 && balance >= amount){
+            balance -= amount;
+        }else {
+        System.out.println("Insufficient funds.");
+    }
+    }
+    public void displayDetails(){
+    System.out.println("Account Name: " + accountName);
+    System.out.println("Account Number: " + accountNumber);
+    System.out.println("Account Balance: $" + balance);
+    System.out.println("Bank Name: " + bankName);
+     System.out.println();
+    }
+     public static void main(String[] args){
+        BankAccount account1 = new BankAccount("Jane", 1102345, 1000);
+        BankAccount account2 = new BankAccount("Joy", 1120037, 2000);
+        
+        account1.deposit(200);
+        account1.withdraw(100);
+        account1.displayDetails();
+       
+        account2.deposit(300);
+         account2.withdraw(100);
+          account2.displayDetails();
+    }
+}

@@ -27,6 +27,7 @@ class Student{
          System.out.println("Name: " +name);
           System.out.println("StudentID: " + studentId);
            System.out.println("Grade: " + grade);
+           System.out.println("School Name"+ schoolName);
     }
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
@@ -39,5 +40,6 @@ class Student{
         
         Student myStudent = new Student(name, studentId, grade);
         myStudent.displayInfo();
+        scanner.close();
     }
 }

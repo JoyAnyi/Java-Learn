@@ -1,0 +1,76 @@
+import java.util.Scanner;
+class Student{
+   String name;
+   int studentId;
+    private double grade;
+    static String schoolName = "Bright Future High";
+    
+    public Student(String name, int studentId, double grade){
+        this.name = name;
+        this.studentId = studentId;
+        this.grade = grade;
+    }
+    public double getGrade(){
+        return grade;
+    }
+   
+    
+    public void displayInfo(){
+        System.out.println("Student Information:");
+        if(grade >=70){
+            System.out.println("You got an A");
+        }
+        else if(grade >=40){
+            System.out.println("Pass");
+        }
+        
+        else{
+            System.out.println("Fail");
+        }
+        
+         System.out.println("Name: " +name);
+          System.out.println("StudentID: " + studentId);
+           System.out.println("Grade: " + grade);
+           System.out.println("School Name"+ schoolName);
+            System.out.println();
+    }
+    
+    public static void main(String args[]){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of students:");
+        int numberOfStudents = scanner.nextInt();
+        scanner.nextLine();
+        Student students[] = new Student [numberOfStudents];
+        for(int i =0; i<numberOfStudents;i++){
+            System.out.println("Enter details for student: " + (i+1));
+            
+        System.out.println("Name:");
+        String name = scanner.nextLine();
+        System.out.println("StudentID:");
+        int studentId = scanner.nextInt();
+        System.out.println("Grade:");
+        double grade = scanner.nextDouble();
+        scanner.nextLine();
+        students[i] = new Student(name, studentId, grade);
+        }
+       System.out.println();
+       System.out.println("Class Report");
+       double totalGrade = 0;
+       int passed = 0;
+       int failed = 0;
+       for(Student student : students){
+           student.displayInfo();
+           totalGrade +=student.getGrade();
+           if(student.getGrade() >=40){
+               passed++;
+           }else{
+               failed++;
+           }
+       }
+        double average = totalGrade/numberOfStudents;
+       System.out.println("Class Average: " +average);
+       System.out.println("Students Passed: " + passed);
+        System.out.println("Students Failed: " + failed);
+        scanner.close();
+    }
+}
